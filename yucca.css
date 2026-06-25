@@ -1,0 +1,418 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+@font-face {
+    font-family: magnetik;
+    src: url(Magnetik-Thin.otf);
+}
+.main-container{
+    position: relative;
+    height: 500vh;
+}
+.navbar{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+    border: 1px solid grey;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    font-family: magnetik;
+}
+.navbar-left{
+    display: flex;
+    justify-content: space-evenly;
+    width: 55%;
+    align-items: center;
+}
+#inner-left-nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    align-items: center;
+}
+.navbar-right{
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+    align-items: center;
+}
+#logo-yucca{
+    width: 50px;
+    height: 50px;
+}
+#yuccaLogoWithText{
+    display: flex;
+    justify-content: space-around;
+    font-weight: 600;
+    color: #1D1D1B;
+}
+#loginButton{
+    width: 100px;
+    height: 35px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    font-family: magnetik;
+    font-size: 20px;
+}
+#cart-logo{
+    height: 30px;
+    width: 30px;
+}
+#firstImg{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    top: 0;
+    left: 0;
+}
+#containerForText1{
+    z-index: 5;
+    position: absolute;
+    top: 150px;
+    left: 250px;
+}
+#text1{
+    font-family: magnetik;
+    font-size: 85px;
+    color: #1D1D1D;
+    font-weight: 600;
+}
+#mainContainerOnGlass{
+    z-index: 5;
+    position: absolute;
+    display: flex;
+    top: 480px;
+    left: 250px;
+    width: 85%;
+    height: 42%;
+}
+#left{
+    z-index: 5;
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Cards — slide-in animation. JS will clear this once done. */
+#item1, #item2, #item3{
+    z-index: 5;
+    height: 40vh;
+    width: 31.7%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: magnetik;
+    font-size: 40px;
+    opacity: 0;
+    transform: translateX(1000px) translateY(1000px) rotate(100deg);
+    animation: slideLeft 0.6s ease forwards;
+}
+#item1 { animation-delay: 0.2s; }
+#item2 { animation-delay: 0.4s; }
+#item3 { animation-delay: 0.6s; }
+
+@keyframes slideLeft {
+    to{
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+}
+
+#item1:hover, #item2:hover, #item3:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.navbar:hover{
+    background-color: white;
+    transition: 0.5s ease-out;
+}
+#inner-left-nav-item1,
+#inner-left-nav-item2,
+#inner-left-nav-item3,
+#inner-left-nav-item4,
+#inner-left-nav-item5{
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.5s ease-out;
+}
+#inner-left-nav-item1:hover,
+#inner-left-nav-item2:hover,
+#inner-left-nav-item3:hover,
+#inner-left-nav-item4:hover,
+#inner-left-nav-item5:hover{
+    border-bottom-color: black;
+}
+#credit-application{
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.5s ease-out;
+}
+#credit-application:hover{
+    border-bottom-color: black;
+}
+#arrowOfLogin{
+    transition: transform 0.5s ease;
+}
+#loginButton:hover #arrowOfLogin{
+    transform: rotate(180deg);
+}
+
+/* Hero text lines */
+#in-text1-line1,
+#in-text1-line2,
+#in-text1-line3{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideDown 0.6s ease forwards;
+}
+#in-text1-line1 { animation-delay: 0.2s; }
+#in-text1-line2 { animation-delay: 0.4s; }
+#in-text1-line3 { animation-delay: 0.6s; }
+
+@keyframes slideDown {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── CARD HOVER ── */
+.card{
+    position: relative;
+    overflow: hidden;
+}
+
+/* defaulttext: starts hidden (JS will set opacity:1 after animationend on parent card) */
+.defaulttext {
+    position: absolute;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: magnetik;
+    opacity: 0;                      /* JS sets this to 1 after card animates in */
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hovertext{
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 85%;
+    text-align: left;
+    font-size: 22px;
+    line-height: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hover: hide defaulttext, show hovertext */
+.card:hover .defaulttext{
+    opacity: 0 !important;
+    transform: translateY(-30px) !important;
+}
+.card:hover .hovertext{
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-space{
+    height: 2200px;
+    background-color: rgb(222, 217, 197);
+}
+#tiffin {
+    position: absolute;
+    top: 1300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+}
+
+#tiffin img {
+    width: 100%;
+    height: 100%;
+    /*   */
+}
+
+#textOnTiffin {
+    position: absolute;
+    top: 1480px;        /* sits on top of tiffin image area */
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 45px;
+    font-weight: 800;
+    font-family: magnetik;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.marquee-track {
+    display: flex;
+    animation: marqueeScroll 8s linear infinite;
+}
+
+.marquee-track.reverse {
+    animation: marqueeScrollReverse 8s linear infinite;
+}
+
+.marquee-track span {
+    flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-25%); }
+}
+
+@keyframes marqueeScrollReverse {
+    from { transform: translateX(-25%); }
+    to   { transform: translateX(0); }
+}
+
+#afterTiffin {
+    position: absolute;
+    top: 1850px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#textAfterTiffin {
+    font-family: magnetik;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 100px;
+}
+
+#seeProducts {
+    margin-top: 30px;
+    padding: 10px 25px;
+    background-color: black;
+    color: white;
+    font-family: magnetik;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+#seeProducts:hover {
+    opacity: 0.5;
+}
+
+#section-three {
+    position: absolute;
+    top: 2200px;        /* adjust this value to place it where you want */
+    /* left: 250px; */
+    width: 100%;
+    height: 110vh;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./food6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    isolation: isolate;
+}
+#section-three::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./food6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+}
+
+#section-three-card1, #section-three-card2, #section-three-card3 {
+    position: relative;     /* needed for absolute children */
+    overflow: hidden;       /* needed for hover text */
+    z-index: 5;
+    height: 40vh;
+    width: 20%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 13px;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    font-family: magnetik;
+    font-size: 1000px;
+    opacity: 0;
+    transform: translateX(1000px) translateY(1000px) rotate(100deg);
+    transition: all 0.2s ease-in;
+    animation: slideLeft 0.6s ease forwards;
+    margin-left: 35px;
+}
+
+#section-three-card1 { animation-delay: 0.2s; }
+#section-three-card2 { animation-delay: 0.4s; }
+#section-three-card3 { animation-delay: 0.6s; }
+
+#section-three-card1:hover,
+#section-three-card2:hover,
+#section-three-card3:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 50vh;
+    width: 25%;
+}
+
+.defaulttext-section-three {
+    position: absolute;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: magnetik;
+    opacity: 1;
+    font-size: 70px;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hovertext-section-three {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 85%;
+    text-align: left;
+    font-size: 25px;
+    line-height: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card-section-three:hover .defaulttext-section-three {
+    opacity: 0 !important;
+    transform: translateY(-30px) !important;
+}
+
+.card-section-three:hover .hovertext-section-three {
+    opacity: 1;
+    transform: translateY(0);
+}

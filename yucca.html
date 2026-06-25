@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yucca packaging</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="yucca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="main-container" data-scroll-container>
+        <div class="navbar">
+            <div class="navbar-left">
+                <div id="inner-left-nav">
+                    <p id="yuccaLogoWithText"><img src="logo-icon.svg" alt="img" id="logo-yucca">Yucca <br> Packaging
+                    </p>
+                    <p id="inner-left-nav-item1">Shop</p>
+                    <p id="inner-left-nav-item2">Packaging Solutions</p>
+                    <p id="inner-left-nav-item3">Company</p>
+                    <p id="inner-left-nav-item4">Resources</p>
+                    <p id="inner-left-nav-item5">Contact Us</p>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <p id="credit-application">Credit Application</p>
+                <p id="cart-logo"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+                <p><button id="loginButton">Login <i id="arrowOfLogin" class="fa fa-angle-down"
+                            aria-hidden="true"></i></button></p>
+            </div>
+        </div>
+        <img id="firstImg" src="food4.jpg" alt="imageCoffe">
+        <div id="containerForText1">
+            <div id="text1">
+                <p id="in-text1-line1">Packaging that</p>
+                <p id="in-text1-line2">Performs. Innovated</p>
+                <p id="in-text1-line3">for Industry Leaders.</p>
+            </div>
+        </div>
+        <div id="mainContainerOnGlass">
+            <div id="left">
+                <div id="item1" class="card">
+                    <p class="defaulttext">Food Service</p>
+                    <p class="hovertext">
+                        Your food service packaging is an extension
+                        of your brand experience. Have functional
+                        and on-brand items like cups, tubs, bowls
+                        and more readily available for takeout,
+                        catering, and deli food. Choose standard
+                        containers, customised or designed from
+                        scratch.
+                    </p>
+                </div>
+                <div id="item2" class="card">
+                    <p class="defaulttext">Food Processing</p>
+                    <p class="hovertext">
+                        Keep meat, poultry, and seafood fresh for
+                        longer with packaging that minimises leaks
+                        and reduces waste. For ready meals, opt for
+                        ultra-convenient, retail-ready packaging,
+                        designed to go from freezer to oven with
+                        ease.
+                    </p>
+                </div>
+                <div id="item3" class="card">
+                    <p class="defaulttext">Agriculture</p>
+                    <p class="hovertext">
+                        Ensure that your produce remains crisp and
+                        fresh from the harvesting phase to the
+                        moment it hits store shelves. Growers,
+                        packhouses, exporters, and retailers trust
+                        Yucca Packaging to match shape, size, and
+                        material to their needs.
+                    </p>
+                </div>
+            </div>
+            <div id="right"></div>
+        </div>
+        <div class="scroll-space"></div>
+        <div id="tiffin">
+            <img src="tiffin.webp" alt="tiffinImage">
+        </div>
+        <div id="textOnTiffin">
+            <div class="marquee-track">
+                <span>Quality Branding Yucca Rewards Yucca Direct (B2B) &nbsp;&nbsp;&nbsp;</span>
+                <span>Quality Branding Yucca Rewards Yucca Direct (B2B) &nbsp;&nbsp;&nbsp;</span>
+                <span>Quality Branding Yucca Rewards Yucca Direct (B2B) &nbsp;&nbsp;&nbsp;</span>
+                <span>Quality Branding Yucca Rewards Yucca Direct (B2B) &nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <div class="marquee-track reverse">
+                <span>Custom Packaging Sustainable Innovation Partnerships &nbsp;&nbsp;&nbsp;</span>
+                <span>Custom Packaging Sustainable Innovation Partnerships &nbsp;&nbsp;&nbsp;</span>
+                <span>Custom Packaging Sustainable Innovation Partnerships &nbsp;&nbsp;&nbsp;</span>
+                <span>Custom Packaging Sustainable Innovation Partnerships &nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <div id="afterTiffin">
+            <div id="textAfterTiffin">
+                <span>Set the standard for packaging excellence in your industry. Let us</span>
+                <br>
+                <span>help you make your products memorable.</span>
+                <br>
+                <button id="seeProducts">See products</button>
+            </div>
+        </div>
+        <div id="section-three">
+            <div id="section-three-card1" class="card-section-three">
+                <p class="defaulttext-section-three">
+                    Food Service
+                </p>
+                <p class="hovertext-section-three">
+                    Deliver meals that look good, travel well and
+                    impress customers with attention to detail. We
+                    can help you customise packaging so it
+                    matches the quality of your food and reflects
+                    the image you want to exude.
+                </p>
+            </div>
+            <div id="section-three-card2" class="card-section-three">
+                <p class="defaulttext-section-three">
+                    Food Processing
+                </p>
+                <p class="hovertext-section-three">
+                    Work with Yucca to take the complexity out of
+                    food processing. We can help local and
+                    international businesses streamline production
+                    and maintain product quality.
+                </p>
+            </div>
+            <div id="section-three-card3" class="card-section-three">
+                <p class="defaulttext-section-three">
+                    Agriculture
+                </p>
+                <p class="hovertext-section-three">
+                    Partner with a team that understands the pace
+                    and pressure of agriculture. Whether it's
+                    delivering fresh produce worldwide or reducing
+                    losses with packaging that protects your
+                    harvest and is also retail-ready, we can help.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Wait for the card's slide-in animation to finish,
+        // then strip animation from both the card AND its defaulttext.
+        // This frees them up so CSS hover transitions work correctly.
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('animationend', () => {
+                card.style.opacity = '1';
+                card.style.transform = 'none';
+                card.style.animation = 'none';
+
+                const dt = card.querySelector('.defaulttext');
+                if (dt) {
+                    dt.style.opacity = '1';
+                    dt.style.transform = 'translateY(0)';
+                    dt.style.animation = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+        });
+    </script>
+<script>
+    const sectionThree = document.getElementById('section-three');
+
+    const cardImages = {
+        'section-three-card1': './food6.jpg',
+        'section-three-card2': './food5.jpg',   // replace with your actual image
+        'section-three-card3': './food1.jpg'    // replace with your actual image
+    };
+
+    const defaultImage = './food6.jpg';
+
+    // Create a real div overlay instead of pseudo-element (more controllable)
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        z-index: 0;
+        pointer-events: none;
+    `;
+    sectionThree.appendChild(overlay);
+
+    // Make sure cards sit above the overlay
+    document.querySelectorAll('.card-section-three').forEach(card => {
+        card.style.zIndex = '2';
+
+        card.addEventListener('mouseenter', () => {
+            const img = cardImages[card.id];
+            if (img) {
+                overlay.style.backgroundImage = `url('${img}')`;
+                overlay.style.opacity = '1';
+            }
+        });
+
+        card.addEventListener('mouseleave', () => {
+            overlay.style.opacity = '0';
+        });
+    });
+</script>
+</body>
+
+</html>
